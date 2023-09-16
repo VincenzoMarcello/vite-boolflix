@@ -134,3 +134,12 @@ creando un layout completo simil-Netflix:
 - installiamo gli npm che ci servono
 - impostiamo lo store e creiamo i vari componenti
 - creiamo la struttura importando i vari componenti dove servono
+
+**MILESTONE 1**
+
+- facciamo un metodo che fa una chiamata axios
+  e proviamo a inserire la risposta nell'array movies dello store
+- in AppHeader mettiamo una nav con una serch bar che manderà tramite emit il value
+  della ricerca
+- passiamo questo valore al metodo che quindi filtrerà i movies
+- stampiamo a schermo tramite lista e v-for le chiavi che ci servono
