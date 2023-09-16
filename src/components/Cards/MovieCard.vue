@@ -1,22 +1,15 @@
 <script>
-// importiamo la componente MovieCard
-import MovieCard from "./MovieCard.vue";
-
 export default {
   data() {
     return {
       title: "Hello world",
     };
   },
-
-  components: {
-    MovieCard,
-  },
 };
 </script>
 
 <template>
-  <MovieCard />
+  <h1>{{ title }}</h1>
 </template>
 
 <style lang="scss" scoped></style>
