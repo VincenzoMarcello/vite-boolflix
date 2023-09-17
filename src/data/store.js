@@ -6,4 +6,5 @@ import { reactive } from "vue";
 // # e invochiamo appunto il metdo che renderà reattivo l'oggetto
 export const store = reactive({
   movies: [],
+  series: [],
 });

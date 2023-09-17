@@ -143,3 +143,9 @@ creando un layout completo simil-Netflix:
   della ricerca
 - passiamo questo valore al metodo che quindi filtrerà i movies
 - stampiamo a schermo tramite lista e v-for le chiavi che ci servono
+
+**MILESTONE 2**
+
+- per stampare le bandiere uso v-if e v-else-if aggiungendo un controllo se non ho la bandiera
+- per ricercare le serie faccio un altro emit in AppHeader e un'altro metodo
+  che fa una chiamata axios in App.vue
