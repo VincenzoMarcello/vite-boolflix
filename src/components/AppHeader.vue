@@ -18,9 +18,7 @@ export default {
       <!-- submit.prevent è un evento che si usa sul form e si attiva sia 
         con il click che con il tasto enter -->
       <form
-        @submit.prevent="
-          $emit('search-movies', term), $emit('search-series', term)
-        "
+        @submit.prevent="$emit('search-movies', term)"
         class="d-flex"
         role="search"
       >

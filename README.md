@@ -147,5 +147,12 @@ creando un layout completo simil-Netflix:
 **MILESTONE 2**
 
 - per stampare le bandiere uso v-if e v-else-if aggiungendo un controllo se non ho la bandiera
-- per ricercare le serie faccio un altro emit in AppHeader e un'altro metodo
+- per ricercare le serie faccio un metodo che fa da ponte e un'altro metodo
   che fa una chiamata axios in App.vue
+
+**MILESTONE 3**
+
+- aggiungo al destructuring in App.vue il poster_path e tramite operatore ternario controllo
+  il caso in cui non ci sia la locandina
+- per fare le stelline faccio un math.ceil e trasformo il voto in un numero che va da 1 a 5
+  e tramite due v-for stampo le stelline

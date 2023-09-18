@@ -52,8 +52,10 @@ export default {
               title,
               og_title: original_title,
               language: original_language,
-              vote: vote_average,
-              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
+              vote: Math.ceil(vote_average / 2),
+              poster: poster_path
+                ? "https://image.tmdb.org/t/p/w342" + poster_path
+                : "/img/empty.png",
             };
           });
         });
@@ -81,14 +83,23 @@ export default {
 
             return {
               id,
-              name,
-              og_name: original_name,
-              language: origin_country[0],
-              vote: vote_average,
-              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
+              title: name,
+              og_title: original_name,
+              language: origin_country[0].toLowerCase(),
+              vote: Math.ceil(vote_average / 2),
+              poster: poster_path
+                ? "https://image.tmdb.org/t/p/w342" + poster_path
+                : "/img/empty.png",
             };
           });
         });
+    },
+    // metodo che fa da ponte per le due chiamate axios
+    handleSearch(term) {
+      if (!term) return;
+
+      this.fetchMovies(term);
+      this.fetchSeries(term);
     },
   },
 
@@ -106,68 +117,10 @@ export default {
 
 <template>
   <!--usiamo i componenti nel template -->
-  <!-- ricevo l'evento personalizzato dal figlio AppHeader e invoco i metodi
-  che fanno le chiamate axios e metto le risposte nell'array movies e series dello store -->
-  <AppHeader @search-movies="fetchMovies" @search-series="fetchSeries" />
+  <!-- ricevo l'evento personalizzato dal figlio AppHeader e invoco il metodo
+  che fa le chiamate axios e metto le risposte nell'array movies e series dello store -->
+  <AppHeader @search-movies="handleSearch" />
   <!-- stampo a schermo le chiavi che mi sevono tramite v-for -->
-
-  <ul>
-    <li v-for="movie in store.movies" :key="movie.id">
-      <div>
-        <img :src="movie.poster" alt="" />
-      </div>
-      <div>{{ movie.title }}</div>
-      <div>{{ movie.og_title }}</div>
-      <div>{{ movie.language }}</div>
-      <div v-if="movie.language == 'en'">
-        <img src="/img/en-40.png" alt="" />
-      </div>
-      <div v-else-if="movie.language == 'it'">
-        <img src="/img/it-40.png" alt="" />
-      </div>
-      <div v-else-if="movie.language == 'fr'">
-        <img src="/img/fr-40.png" alt="" />
-      </div>
-      <div v-else-if="movie.language == 'es'">
-        <img src="/img/es-40.png" alt="" />
-      </div>
-      <div v-else-if="movie.language == 'de'">
-        <img src="/img/de-40.png" alt="" />
-      </div>
-      <div v-else>
-        <img src="/img/g-40.png" alt="" />
-      </div>
-    </li>
-  </ul>
-
-  <ul>
-    <li v-for="series in store.series" :key="series.id">
-      <div>
-        <img :src="series.poster" alt="" />
-      </div>
-      <div>{{ series.name }}</div>
-      <div>{{ series.og_name }}</div>
-      <div>{{ series.language }}</div>
-      <div v-if="series.language == 'en'">
-        <img src="/img/en-40.png" alt="" />
-      </div>
-      <div v-else-if="series.language == 'it'">
-        <img src="/img/it-40.png" alt="" />
-      </div>
-      <div v-else-if="series.language == 'fr'">
-        <img src="/img/fr-40.png" alt="" />
-      </div>
-      <div v-else-if="series.language == 'es'">
-        <img src="/img/es-40.png" alt="" />
-      </div>
-      <div v-else-if="series.language == 'de'">
-        <img src="/img/de-40.png" alt="" />
-      </div>
-      <div v-else>
-        <img src="/img/g-40.png" alt="" />
-      </div>
-    </li>
-  </ul>
 
   <AppMain />
 </template>
