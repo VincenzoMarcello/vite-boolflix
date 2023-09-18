@@ -156,3 +156,7 @@ creando un layout completo simil-Netflix:
   il caso in cui non ci sia la locandina
 - per fare le stelline faccio un math.ceil e trasformo il voto in un numero che va da 1 a 5
   e tramite due v-for stampo le stelline
+
+**MILESTONE 4**
+
+- aggiungo la grafica della webapp

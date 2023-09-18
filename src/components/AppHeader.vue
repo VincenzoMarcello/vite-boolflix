@@ -10,9 +10,9 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Boolflix</a>
+      <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="" /></a>
 
       <!-- faccio un emit dove passo il valore term tramite il submit.prevent -->
       <!-- submit.prevent è un evento che si usa sul form e si attiva sia 
@@ -26,15 +26,19 @@ export default {
       e lo salvo in una chiave in data "term" -->
         <input
           v-model="term"
-          class="form-control me-2"
+          class="form-control bg-dark t-light me-2"
           type="search"
-          placeholder="Search"
+          placeholder="search movies or series"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-danger" type="submit">Search</button>
       </form>
     </div>
   </nav>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  width: 60%;
+}
+</style>

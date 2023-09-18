@@ -45,6 +45,7 @@ export default {
               original_language,
               vote_average,
               poster_path,
+              overview,
             } = movie;
 
             return {
@@ -56,6 +57,7 @@ export default {
               poster: poster_path
                 ? "https://image.tmdb.org/t/p/w342" + poster_path
                 : "/img/empty.png",
+              overview,
             };
           });
         });
@@ -79,6 +81,7 @@ export default {
               origin_country,
               vote_average,
               poster_path,
+              overview,
             } = series;
 
             return {
@@ -90,6 +93,7 @@ export default {
               poster: poster_path
                 ? "https://image.tmdb.org/t/p/w342" + poster_path
                 : "/img/empty.png",
+              overview,
             };
           });
         });
