@@ -53,31 +53,6 @@ export default {
       </div>
     </div>
   </div>
-
-  <!-- <ul class="d-flex">
-    <li>
-      <div>
-        <img :src="cardInfo.poster" alt="" />
-      </div>
-      <div>{{ cardInfo.title }}</div>
-      <div>{{ cardInfo.og_title }}</div>
-      <div>{{ cardInfo.vote }}</div>
-
-      <div>
-        <span v-for="star in cardInfo.vote"
-          ><font-awesome-icon icon="fa-solid fa-star"
-        /></span>
-        <span v-for="star in 5 - cardInfo.vote">
-          <font-awesome-icon icon="fa-regular fa-star"
-        /></span>
-      </div>
-
-      <div>{{ cardInfo.language }}</div>
-      <div>
-        <img :src="flagSrc" alt="" />
-      </div>
-    </li>
-  </ul> -->
 </template>
 
 <style lang="scss" scoped>
